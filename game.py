@@ -93,3 +93,23 @@ def get_empty_neighbor(index):
             return empty_index
     # Рядом с блоком не было пустого поля
     return index
+
+
+def show_victory_plate():
+    # Рисуем черный квадрат по центру поля
+    c.create_rectangle(
+        SQUARE_SIZE / 5,
+        SQUARE_SIZE * BOARD_SIZE / 2 - 10 * BOARD_SIZE,
+        BOARD_SIZE * SQUARE_SIZE - SQUARE_SIZE / 5,
+        SQUARE_SIZE * BOARD_SIZE / 2 + 10 * BOARD_SIZE,
+        fill="#000000",
+        outline="#FFFFFF",
+    )
+    # Пишем красным текст Победа
+    c.create_text(
+        SQUARE_SIZE * BOARD_SIZE / 2,
+        SQUARE_SIZE * BOARD_SIZE / 1.9,
+        text="ПЕРЕМОГА!",
+        font="Helvetica {} bold".format(int(10 * BOARD_SIZE)),
+        fill="#DC143C",
+    )
